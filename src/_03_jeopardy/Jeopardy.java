@@ -51,6 +51,16 @@ public class Jeopardy implements ActionListener {
 		frame.setLayout(new BorderLayout());
 
 		// 1. Make the frame show up
+frame.isVisible();
+frame.setTitle("Jeopardy");
+JPanel quizpanel=createHeader("Topic");
+frame.add(quizpanel);
+firstButton=createButton("$100");
+quizpanel.add(firstButton);
+secondButton=createButton("$200");
+firstButton.addActionListener(this);
+secondButton.addActionListener(this);
+
 
 		// 2. Give your frame a title
 

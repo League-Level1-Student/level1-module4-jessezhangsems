@@ -36,9 +36,9 @@ int points=0;
 		// 2. Add the four images that match keyboard keys like this:
 		// images.put(KeyEvent.VK_UP, "up.jpg");
 		images.put(KeyEvent.VK_UP, "up.jpg");
-		images.put(KeyEvent.VK_UP, "down.jpg");
-		images.put(KeyEvent.VK_UP, "left.jpg");
-		images.put(KeyEvent.VK_UP, "right.jpg");
+		images.put(KeyEvent.VK_DOWN, "down.jpg");
+		images.put(KeyEvent.VK_LEFT, "left.jpg");
+		images.put(KeyEvent.VK_RIGHT, "right.jpg");
 		// 3. Use a JOptionPane to tell the user the rules: "Press the matching
 		// key when
 		// 'Simon says' otherwise press a different key"
@@ -53,12 +53,12 @@ showImage();
 		// 16. If the keyCode matches the imageIndex and "Simon says"
 if (e.getKeyCode()==imageIndex&&simonSays) {
 	points++;
-	speak("Correct");
+	//speak("Correct");
 	System.out.println("Correct");
 }
 if(e.getKeyCode()!=imageIndex&&!simonSays) {
 	points++;
-	speak("Correct");
+	//speak("Correct");
 	System.out.println("Correct");
 }
 
@@ -73,15 +73,20 @@ if(e.getKeyCode()!=imageIndex&&!simonSays) {
 		// 21. Use the speak method to tell the user they were correct
 
 		// 22. Increment tries by 1
-
+tries++;
+if (tries>=9) {
+	JOptionPane.showMessageDialog(null, "Your score is "+points+".");
+	System.exit(0);
+}
 		// 25. If tries is greater than 9 (or however many you want)...
 
-		// 26. Tell the user their score
+			// 26. Tell the user their score
 
-		// 27. Exit the program
+			// 27. Exit the program
 
 		// 23. Dispose of the frame
-
+frame.dispose();
+showImage();
 		// 24. Call the showImage method to show a new image
 	}
 
@@ -105,13 +110,13 @@ Random rand=new Random();
 int num=rand.nextInt(2);
 if (num==0) {
 	System.out.println("Simon says press this");
-	speak("Simon says press this");
+	//speak("Simon says press this");
 	simonSays=true;
 }
 
 else{
 	System.out.println("Press this");
-	speak("Press this");
+	//speak("Press this");
 	simonSays=false;
 }
 		// 10. Set the defaultCloseOperation of your frame to
