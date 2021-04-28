@@ -40,6 +40,7 @@ public void setup() {
 	@Override
 	public void keyPressed(KeyEvent arg0) {
 		// TODO Auto-generated method stub
+		System.out.println(currentLetter);
 		
 	}
 
@@ -47,6 +48,8 @@ public void setup() {
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
+		currentLetter=generateRandomLetter();
+		label.setText(currentLetter +"");
 		
 	}
 
