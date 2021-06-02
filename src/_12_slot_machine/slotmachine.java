@@ -40,6 +40,7 @@ private void showPictureFromTheInternet (String imageUrl) {
 		frame.setVisible(true);
 		frame.pack();
 		
+		
 	}
 	catch (MalformedURLException e) {
 		e.printStackTrace();
